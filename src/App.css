@@ -1,38 +1,234 @@
-.App {
+a {
+  color: black;
+  text-decoration: none;
+}
+
+/* HEADER */
+
+#header {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-color: #3DC3FC;
+  width: 100vw;
+}
+#header .fa-solid {
+  color: white;
+  font-size: 1.5rem;
+  margin: .7rem auto;
   text-align: center;
 }
 
-.App-logo {
-  height: 40vmin;
-  pointer-events: none;
-}
+/* HOME */
 
-@media (prefers-reduced-motion: no-preference) {
-  .App-logo {
-    animation: App-logo-spin infinite 20s linear;
-  }
+.container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: space-between;
+  color: black;
+  height: 100vh;
+  width: 100vw;
 }
-
-.App-header {
-  background-color: #282c34;
-  min-height: 100vh;
+.link {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding-bottom: 1rem;
+  height: 25%;
+  width: 100%;
+}
+.link a {
   display: flex;
   flex-direction: column;
   align-items: center;
   justify-content: center;
-  font-size: calc(10px + 2vmin);
+  text-decoration: none;
+  width: 100%;
+}
+.link a img {
+  height: 20vh;
+  width: 100%;
+  object-fit: contain;
+  overflow: hidden;
+}
+.link a .text {
+  width: 90%;
+}
+.link a .text h2 {
+  color: black;
+  font-weight: 400;
+  margin: 0;
+  /* padding: .5rem 0; */
+}
+.link a .text p {
+  color: slategrey;
+  margin: 0;
+}
+
+/* ALL BEERS */
+
+#all-beers {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  width: 100vw;
+}
+#all-beers .card {
+  display: flex;
+  justify-content: flex-start;
+  align-items: center;
+  gap: 1rem;
+  margin: 1rem;
+  width: 100vw;
+}
+#all-beers .card .image {
+  display: flex;
+  justify-content: center;
+  width: 20%;
+}
+#all-beers .card .image img {
+  height: 15vh;
+}
+#all-beers .base-info {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  justify-content: center;
+  width: 75%;
+}
+#all-beers .base-info h2 {
+  margin: 0;
+  padding-bottom: .2rem;
+}
+#all-beers .base-info p {
+  font-size: .8rem;
+  margin: 0;
+  word-wrap: break-word;
+}
+#all-beers .base-info .tagline {
+  color: darkslategrey;
+  font-size: 1.2rem;
+}
+
+/* ONE BEER */
+
+#one-beer {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  width: 100vw;
+}
+
+#one-beer .image {
+  display: flex;
+  justify-content: center;
+  width: 90%;
+}
+
+#one-beer .image img {
+  height: 35vh;
+  margin: 1rem auto 2rem auto;
+}
+
+#one-beer .base-info {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  padding: 1rem;
+  width: 90%;
+}
+
+#one-beer .base-info .name-att, #one-beer .base-info .tag-date {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  width: 100%;
+}
+
+#one-beer .base-info .name-att h1 {
+  margin: .2rem;
+}
+
+#one-beer .base-info .name-att p {
+  color: lightgrey;
+  font-size: 1.7rem;
+  margin: .2rem;
+}
+
+#one-beer .base-info .tag-date {
+  margin: 1rem auto;
+}
+
+#one-beer .base-info .tag-date .tagline {
+  color: slategrey;
+  font-size: 1.2rem;
+  margin: 0;
+}
+
+#one-beer .base-info .tag-date .first-brewed {
+  font-size: .8rem;
+  margin: 0;
+}
+
+#one-beer .base-info .description {
+  letter-spacing: 0;
+  line-height: 1rem;
+  margin: 0;
+}
+
+#one-beer .base-info .contributed {
+  color: slategrey;
+  font-size: .8rem;
+  font-weight: bold;
+}
+
+/* NEW BEER - CREATION FORM */
+
+form {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  margin: 1rem auto;
+  width: 100vw;
+}
+
+form div {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  margin-bottom: 1rem;
+  width: 85%;
+}
+
+form div label {
+  font-size: .6rem;
+  font-weight: bold;
+  padding-left: 1rem;
+  margin-bottom: .2rem;
+}
+
+form div input {
+  border: 1px solid lightgrey;
+  border-radius: 15px;
+  line-height: 1.6rem;
+  padding-left: .5rem;
+  width: 98%;
+}
+
+form div input#description {
+  line-height: 8rem;
+}
+
+form button {
+  background-color: #3DC3FC;
+  border: none;
+  border-radius: 15px;
   color: white;
+  font-weight: bold;
+  line-height: 1.6rem;
+  width: 85%;
 }
 
-.App-link {
-  color: #61dafb;
-}
 
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
-  }
-  to {
-    transform: rotate(360deg);
-  }
-}
