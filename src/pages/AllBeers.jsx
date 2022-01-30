@@ -1,13 +1,18 @@
 import React, { useState, useEffect } from 'react';
 import { Link } from 'react-router-dom';
-import Header from '../components/Header';
 import axios from 'axios';
+
+import Header from '../components/Header';
+import Search from '../components/Search';
+
 
 const AllBeers = () => {
   // creating states
   const [beers, setBeers] = useState([]);
+  const [searchQuery, setSearchQuery] = useState('');
   const [fetching, setFetching] = useState(true);
 
+  // loading the beers for the first display of AllBeers page
   useEffect(() => {
     axios.get('https://ih-beers-api2.herokuapp.com/beers')
     .then(response => {
@@ -18,9 +23,25 @@ const AllBeers = () => {
     .catch(e => console.error(e))
   }, []);
 
+  // loading the beers matching the searchQuery whenever the searchQuery is updated
+  useEffect(() => {
+    // the user is using the search feature
+    axios.get(`https://ih-beers-api2.herokuapp.com/beers/search?q=${searchQuery}`)
+    .then(({ data }) => {
+      console.log('searchQuery :>> ', searchQuery);
+      setBeers(data);
+      setFetching(false);
+    })
+    .catch(e => console.error(e));
+  }, [searchQuery]);
+
+
   return <>
     <Header />
     {fetching && <h3>Loading beers...</h3> }
+
+    <Search searchQuery={searchQuery} setSearchQuery={setSearchQuery} />
+
     <div id="all-beers">
       {beers.length &&
       beers.map(beer => {

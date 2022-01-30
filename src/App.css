@@ -111,6 +111,36 @@ a {
   font-size: 1.2rem;
 }
 
+/* SEARCH FEATURE */
+
+.beer-search {
+  display: flex;
+  justify-content: flex-end;
+  gap: 1rem;
+  margin: 1rem 0;
+  width: 100%;
+}
+
+.beer-search input {
+  border: 1px solid lightgrey;
+  border-radius: 15px;
+  line-height: 1.6rem;
+  margin-left: 1rem;
+  padding-left: .5rem;
+  min-width: 160px;
+}
+
+.beer-search button {
+  background-color: #3DC3FC;
+  border: none;
+  border-radius: 15px;
+  color: white;
+  font-weight: bold;
+  line-height: 1.6rem;
+  margin-right: 1rem;
+  padding: .2rem .5rem;
+}
+
 /* ONE BEER */
 
 #one-beer {
