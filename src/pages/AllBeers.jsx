@@ -28,7 +28,7 @@ const AllBeers = () => {
     // the user is using the search feature
     axios.get(`https://ih-beers-api2.herokuapp.com/beers/search?q=${searchQuery}`)
     .then(({ data }) => {
-      console.log('searchQuery :>> ', searchQuery);
+      // console.log('searchQuery :>> ', searchQuery);
       setBeers(data);
       setFetching(false);
     })
